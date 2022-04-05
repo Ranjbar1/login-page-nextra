@@ -5,11 +5,22 @@ import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import Link from "../src/Link";
 import Navbar from "../src/Navbar";
+import Login from "../src/Login";
+import Grid from "@mui/material/Grid";
+import ImageLogin from "../src/Image";
 
 const Home: NextPage = () => {
   return (
     <div dir="rtl">
       <Navbar></Navbar>
+      <Grid container spacing={2}>
+        <Grid item lg={6}>
+          <Login></Login>
+        </Grid>
+        <Grid item lg={6}>
+          <ImageLogin></ImageLogin>
+        </Grid>
+      </Grid>
     </div>
   );
 };

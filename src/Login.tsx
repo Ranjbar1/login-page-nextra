@@ -1,3 +1,4 @@
+import { Paper } from "@mui/material";
 import * as React from "react";
 
 interface LoginProps {
@@ -5,7 +6,11 @@ interface LoginProps {
 }
 
 const Login: FunctionComponent<LoginProps> = () => {
-  return <div></div>;
+  return (
+    <div>
+      <Paper></Paper>
+    </div>
+  );
 };
 
 export default Login;
