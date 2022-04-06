@@ -1,4 +1,4 @@
-import { Paper } from "@mui/material";
+import { Box, Paper } from "@mui/material";
 import Image from "next/image";
 import * as React from "react";
 
@@ -6,10 +6,12 @@ interface ImageLoginProps {
   children: JSX.Element;
 }
 
-const ImageLogin: FunctionComponent<ImageLoginProps> = () => {
+const ImageLogin = () => {
   return (
-    <Paper>
-      <Image src="/image.svg" width={265} height={369}></Image>
+    <Paper elevation={0}>
+      <Box sx={{ display: "block", minWidth: 600, height: "auto" }}>
+        <Image src="/image.svg" width={265} height={369}></Image>
+      </Box>
     </Paper>
   );
 };

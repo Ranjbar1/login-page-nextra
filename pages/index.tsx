@@ -14,10 +14,10 @@ const Home: NextPage = () => {
     <div dir="rtl">
       <Navbar></Navbar>
       <Grid container spacing={2}>
-        <Grid item lg={6}>
+        <Grid item>
           <Login></Login>
         </Grid>
-        <Grid item lg={6}>
+        <Grid item xs={false}>
           <ImageLogin></ImageLogin>
         </Grid>
       </Grid>

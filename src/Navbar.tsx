@@ -1,4 +1,12 @@
-import { Grid, Paper, ButtonGroup, Button } from "@mui/material";
+import {
+  Grid,
+  Paper,
+  ButtonGroup,
+  Button,
+  Icon,
+  IconButton,
+} from "@mui/material";
+import Image from "next/image";
 import * as React from "react";
 
 interface NavbarProps {
@@ -7,27 +15,38 @@ interface NavbarProps {
 
 const Navbar: FunctionComponent<NavbarProps> = () => {
   return (
-    <Paper>
-      <Grid container>
-        <Grid item lg={8}>
-          <ButtonGroup
-            variant="text"
-            color="inherit"
-            aria-label="text group button"
-          >
-            <Button>خانه</Button>
-            <Button>درباره ما </Button>
-            <Button>مارکت API </Button>
-          </ButtonGroup>
-        </Grid>
-        <Grid item lg={4}>
-          <ButtonGroup variant="text" color="inherit" aria-label="text group ">
-            <Button>ورود</Button>
-            <Button>ثبت نام</Button>
-          </ButtonGroup>
-        </Grid>
+    <Grid
+      container
+      component={Paper}
+      elevation={4}
+      alignItems="center"
+      sx={{ height: "10vh", display: "flex", flexDirection: "row" }}
+    >
+      <Grid item lg={8} sx={{}}>
+        <IconButton>
+          <Image width={1} height={1} src="/download (1)_2.svg" alt="" />
+        </IconButton>
+        <IconButton>
+          <Image src="/download_2.svg" width={51} height={13} alt="" />
+        </IconButton>
+        <ButtonGroup
+          variant="text"
+          color="inherit"
+          aria-label="text group button"
+          sx={{ marginRight: "12vw" }}
+        >
+          <Button>خانه</Button>
+          <Button>درباره ما </Button>
+          <Button>مارکت API </Button>
+        </ButtonGroup>
       </Grid>
-    </Paper>
+      <Grid item lg={4}>
+        <ButtonGroup variant="text" color="inherit" aria-label="text group ">
+          <Button>ثبت نام</Button>
+          <Button variant="contained">ورود</Button>
+        </ButtonGroup>
+      </Grid>
+    </Grid>
   );
 };
 
