@@ -20,6 +20,7 @@ export default class MyDocument extends Document {
           <style data-href="https://cdnjs.cloudflare.com/ajax/libs/vazir-font/30.1.0/UI/font-face-UI.min.css"></style>
           {/* Inject MUI styles first to match with the prepend: true configuration. */}
           {(this.props as any).emotionStyleTags}
+          <title>my Next AIBox Profile</title>
         </Head>
         <body>
           <Main />

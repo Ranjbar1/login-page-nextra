@@ -13,7 +13,7 @@ interface NavbarProps {
   children: JSX.Element;
 }
 
-const Navbar: FunctionComponent<NavbarProps> = () => {
+const Navbar = () => {
   return (
     <Grid
       container
@@ -24,10 +24,20 @@ const Navbar: FunctionComponent<NavbarProps> = () => {
     >
       <Grid item lg={8} sx={{}}>
         <IconButton>
-          <Image width={1} height={1} src="/download (1)_2.svg" alt="" />
+          <Image
+            width={1}
+            height={1}
+            src="/download (1)_2.svg"
+            alt="icon aibox"
+          />
         </IconButton>
         <IconButton>
-          <Image src="/download_2.svg" width={51} height={13} alt="" />
+          <Image
+            src="/download_2.svg"
+            width={51}
+            height={13}
+            alt="logo aibox"
+          />
         </IconButton>
         <ButtonGroup
           variant="text"
@@ -42,8 +52,10 @@ const Navbar: FunctionComponent<NavbarProps> = () => {
       </Grid>
       <Grid item lg={4}>
         <ButtonGroup variant="text" color="inherit" aria-label="text group ">
-          <Button>ثبت نام</Button>
-          <Button variant="contained">ورود</Button>
+          <Button name="signup">ثبت نام</Button>
+          <Button name="signin" variant="contained">
+            ورود
+          </Button>
         </ButtonGroup>
       </Grid>
     </Grid>

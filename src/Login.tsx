@@ -12,6 +12,8 @@ import Grid from "@mui/material/Grid";
 import { useState } from "react";
 import Typography from "@mui/material/Typography";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
+import { loadGetInitialProps } from "next/dist/shared/lib/utils";
+import InputField from "./InputField";
 
 const theme = createTheme();
 
@@ -20,15 +22,27 @@ export default function Login() {
   const { email, password } = userdata;
 
   const onChangeHandler = (e: any) => {
-    setData({ ...userdata, [e.target.name]: [e.target.value] });
+    setData({ ...userdata, [e.currentTarget.name]: [e.currentTarget.value] });
   };
-  console.log(userdata);
 
   const handleSubmit = (e: any) => {
     e.preventDefault();
-    console.log(userdata);
+    console.log(email, password);
+    const defaultUser = {
+      defaultEmail: "98ranjbar@gmail.com",
+      defaultPassword: "azxc*1998",
+    };
+
+    if (
+      email[0] === defaultUser.defaultEmail &&
+      password[0] == defaultUser.defaultPassword
+    ) {
+      console.log("soyou just loged in , now what?");
+    } else {
+      console.log("nononon");
+    }
   };
-  const handleSubmitt = (event: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit2 = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
     const data = new FormData(event.currentTarget);
@@ -50,37 +64,27 @@ export default function Login() {
           alignItems: "center",
         }}
       >
-        <Typography component="h1" variant="h5">
+        <Typography component="h1" variant="h3">
           ورود{" "}
         </Typography>
-        <Box component="form" dir="rtl" onSubmit={handleSubmitt} sx={{ mt: 1 }}>
-          <TextField
-            onChange={onChangeHandler}
-            margin="normal"
-            required
-            fullWidth
-            id="email"
-            label="آدرس ایمیل"
-            name="email"
-            autoComplete="email"
-            autoFocus
-            variant="standard"
+        <Box component="form" dir="rtl" onSubmit={handleSubmit} sx={{ mt: 1 }}>
+          <InputField
             value={email}
-          />
-          <TextField
-            variant="standard"
+            type="email"
+            id="email"
+            name="email"
             onChange={onChangeHandler}
-            margin="normal"
-            required
-            fullWidth
-            error
-            name="password"
-            label="رمز عبور"
+            label=" ایمیل"
+          ></InputField>
+          <InputField
+            value={password}
             type="password"
             id="password"
-            value={password}
-            autoComplete="current-password"
-          />
+            name="password"
+            onChange={onChangeHandler}
+            label="گذرواژه"
+          ></InputField>
+
           <FormControlLabel
             control={<Checkbox value="remember" color="primary" />}
             label="مرا بخاطر بسپار"
